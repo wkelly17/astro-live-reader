@@ -1,0 +1,9 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "jsxImportSource": "solid-js"
+  },
+  "include": ["./**/*", "node_modules/vite-plugin-pwa/client.d.ts"]
+}
