@@ -3,15 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import {getRepoHtmlStraight} from "../../lib/datafetching"
 import ReaderPane from '../../components/Reader';
 const { repo } = Astro.params;
-// Astro.response.headers.set(
-//   "Cache-Control",
-//   "max-age=30"
-// ) 
-// checks server first: 
+Astro.response.headers.set(
+  "Cache-Control",
+  "max-age=30"
+) 
+
 const parts = repo && String(repo).split('/');
 const user = parts && parts[0]; 
 const repositoryName = parts && parts[1];
 const data: any = await getRepoHtmlStraight(repo);
+
 ---
 
 <Layout title="Repo">

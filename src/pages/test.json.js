@@ -1,25 +1,23 @@
 // import {readDb, writeToDb} from "../lib/db";
-// export async function get(req) {
-//   // console.log(params);
+export async function get(req) {
+  // console.log(params);
 
-//   let page = req.url?.searchParams.get("page");
-//   let rows = await readDb(page);
+  let page = req ? req.url?.searchParams.get("page") : "no req given";
+  // let rows = await readDb(page);
 
-//   console.log({rows});
-
-//   return new Response(
-//     JSON.stringify({
-//       status: "I worked!",
-//       rows,
-//     }),
-//     {
-//       status: 200,
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     }
-//   );
-// }
+  return new Response(
+    JSON.stringify({
+      status: "I worked!",
+      page,
+    }),
+    {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+}
 
 // export async function post({request, url}) {
 //   let body;
