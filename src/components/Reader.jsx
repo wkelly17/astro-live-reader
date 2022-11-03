@@ -11,6 +11,8 @@ export default function ReaderPane(props) {
   });
 
   onMount(async () => {
+    return;
+    // todo: put hash routing back in:
     // todo: works: needs refinement:
 
     // debugger;
