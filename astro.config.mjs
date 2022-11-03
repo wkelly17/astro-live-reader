@@ -9,15 +9,15 @@ import {manifest} from "./manifest";
 import {VitePWA} from "vite-plugin-pwa";
 
 // https://astro.build/config
-import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 console.log(import.meta.env.MODE);
+
+// https://astro.build/config
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: cloudflare(),
   integrations: [tailwind(), solidJs()],
   vite: {
     plugins: [
@@ -34,6 +34,7 @@ export default defineConfig({
           globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
           // sourcemap: true,
         },
+
         devOptions: {
           enabled: true,
           type: "module",

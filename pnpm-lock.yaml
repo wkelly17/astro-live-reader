@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/cloudflare': ^3.1.2
   '@astrojs/node': ^2.0.2
   '@astrojs/solid-js': ^1.2.2
   '@astrojs/tailwind': ^2.1.1
@@ -20,6 +21,7 @@ specifiers:
   workbox-window: ^6.5.4
 
 dependencies:
+  '@astrojs/cloudflare': 3.1.2
   '@astrojs/node': 2.0.2
   '@astrojs/solid-js': 1.2.2_62p55bdagmupcfdhohd4e56yya
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
@@ -60,6 +62,12 @@ packages:
       jsonpointer: 5.0.1
       leven: 3.1.0
     dev: true
+
+  /@astrojs/cloudflare/3.1.2:
+    resolution: {integrity: sha512-79AoNCsW70UIRlM5/yGJUc9Gzs09QeBpxTletlnXI4GPKmNFBQjXUkCFgJuFDEuTIwDwtVXLvzXzPkTPYqi+kg==}
+    dependencies:
+      esbuild: 0.14.54
+    dev: false
 
   /@astrojs/compiler/0.23.5:
     resolution: {integrity: sha512-vBMPy9ok4iLapSyCCT1qsZ9dK7LkVFl9mObtLEmWiec9myGHS9h2kQY2xzPeFNJiWXUf9O6tSyQpQTy5As/p3g==}

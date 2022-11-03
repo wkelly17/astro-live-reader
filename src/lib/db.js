@@ -19,7 +19,6 @@ async function openDb() {
     driver: sqlite3.cached.Database,
   });
   console.log({db});
-  console.log({dbFile});
   return db;
 }
 
