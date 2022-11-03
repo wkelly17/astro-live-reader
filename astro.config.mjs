@@ -17,7 +17,7 @@ console.log(import.meta.env.MODE);
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({mode: "directory"}),
   integrations: [tailwind(), solidJs()],
   vite: {
     plugins: [
