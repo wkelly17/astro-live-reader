@@ -52,7 +52,7 @@ export async function getRepoHtmlStraight(req, skipDb = false) {
       let unixEpoch = Date.now();
 
       chapters.unshift(
-        `<div> I was fake changed! by to reflect unix Epoch! ${unixEpoch} </div>`
+        `<div> This changes every minutes:  The current minute of the hour is ${new Date().getMinutes()} </div>`
       );
       return chapters;
     } catch (error) {

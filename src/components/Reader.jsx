@@ -121,6 +121,8 @@ export default function ReaderPane(props) {
 IF WE PUT THIS ON CLOUDFLARE, x cache control headers? How long to set to?
 4. Query params on reader to jump straight to a chapter
 5. see what happens if server request is offline.  Can I just return a fetch failed status and try client side fetching to service worker?
+
+6. Ask dan if I can peer take a gander at any of our existing cloudflare sites.   Pages vs. Traditional site setup; 
 */
 
 // EMS wordpress tomorrow:
