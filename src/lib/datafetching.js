@@ -1,5 +1,5 @@
 // http://localhost/u/WA-Catalog/en_ulb/index.json
-import {readDb, writeToDb} from "./db";
+// import {readDb, writeToDb} from "./db";
 export async function getRepoHtml() {
   const response = await fetch(
     "http://localhost/u/WA-Catalog/en_ulb/index.json"
@@ -7,24 +7,6 @@ export async function getRepoHtml() {
   const indexToHtml = await response.json();
   const allHtml = await getAllHtml(indexToHtml);
   return allHtml;
-}
-export async function checkForNewerDocOnNetwork(req) {
-  let data = await getRepoHtmlStraight(req, true); /* array of chapters */
-  let dbResult = await writeToDb(req, data);
-  if (dbResult.sameResponse === true) {
-    return new Response(
-      JSON.stringify({
-        upToDate: true,
-      })
-    );
-  } else {
-    return new Response(
-      JSON.stringify({
-        upToDate: false,
-        ...dbResult,
-      })
-    );
-  }
 }
 
 export async function getRepoHtmlStraight(req, skipDb = false) {
@@ -36,13 +18,13 @@ export async function getRepoHtmlStraight(req, skipDb = false) {
   async function fetchHtmlContent(slug) {
     try {
       console.log(`I am fetching ${slug}`);
-      if (!skipDb) {
-        let sqliteVersion = await readDb(slug);
-        if (sqliteVersion) {
-          console.log("sqlite version!");
-          return JSON.parse(sqliteVersion.response);
-        }
-      }
+      // if (!skipDb) {
+      //   let sqliteVersion = await readDb(slug);
+      //   if (sqliteVersion) {
+      //     console.log("sqlite version!");
+      //     return JSON.parse(sqliteVersion.response);
+      //   }
+      // }
       let fetchSlug = `https://read.bibletranslationtools.org/u/${slug}`;
       // let fetchSlug =
       // "https://read.bibletranslationtools.org/u/WycliffeAssociates/en_ulb/";
