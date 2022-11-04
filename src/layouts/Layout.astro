@@ -47,9 +47,9 @@ import ReloadPrompt from '../components/sw/ReloadPrompt.astro';
 </style>
 
 <script>
-	let hasCached404 = await caches.match('/404');
-	console.dir(hasCached404)
-if (!hasCached404) {fetch(window.location.origin.concat('/404'));}
+// 	let hasCached404 = await caches.match('/404');
+// 	console.dir(hasCached404)
+// if (!hasCached404) {fetch(window.location.origin.concat('/404'));}
 
 
 

@@ -15,11 +15,15 @@ console.log(import.meta.env.MODE);
 // https://astro.build/config
 
 // https://astro.build/config
+console.log(import.meta.env.MODE);
 export default defineConfig({
   output: "server",
   adapter: cloudflare({mode: "directory"}),
   integrations: [tailwind(), solidJs()],
   vite: {
+    // define: {
+    //   'process.env.MY_SECRET': JSON.stringify(process.env.MY_SECRET),
+    // },
     plugins: [
       VitePWA({
         base: "/",
@@ -36,7 +40,7 @@ export default defineConfig({
         },
 
         devOptions: {
-          enabled: true,
+          enabled: false,
           type: "module",
         },
         registerType: "prompt",

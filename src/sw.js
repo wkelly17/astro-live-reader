@@ -46,7 +46,7 @@ registerRoute(
     // return request.mode === "navigate";
     return false;
   },
-  new CacheFirst({
+  new NetworkFirst({
     cacheName: "astro-pages",
     plugins: [
       new CacheableResponsePlugin({

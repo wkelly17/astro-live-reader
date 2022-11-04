@@ -11,7 +11,7 @@ export async function getRepoHtml() {
 
 export async function getRepoHtmlStraight(req, skipDb = false) {
   console.log("getting from source");
-  console.log(req);
+  // console.log(req);
 
   if (!req) return;
   let slug = req.url ? req.url?.searchParams.get("slug") : req;
