@@ -1,17 +1,13 @@
 ---
 import { getRuntime } from "@astrojs/cloudflare/runtime";
-let test = getRuntime(Astro.request);
+let astroRuntime = getRuntime(Astro.request);
+import FUNCTIONS_ROUTES from '../functionsRoutes'; 
 console.log('index page')
-
-console.log(test);
+console.log({astroRuntime});
 let unix; 
 try {
-	let url; 
-	if (false) {
-		url = "http://127.0.0.1:8788/api/time"
-	} else {
-		url = '/api/time' // <===  the production url?
-	}
+	let url = FUNCTIONS_ROUTES.time; 
+	console.log(url)
 	// ? How to differentiat this URL for local host port vs production url? 
 	let test2 = await fetch(url);
 	// console.log('find me!')
@@ -30,6 +26,7 @@ import Card from '../components/Card.astro';
 		<h1 class="bg-green-400">Welcome to <span class="text-gradient">Astro</span>Public Env:   {import.meta.env.PUBLIC_ANYBODY}</h1>
 		<a href="/test">Go to test page</a>
 		<p>Here was the result of a functions call:  {unix} </p>
+		<p>Astro runtime: {JSON.stringify(astroRuntime)}</p>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.....
