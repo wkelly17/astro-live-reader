@@ -76,6 +76,7 @@ if (import.meta.env.PROD) {
         }),
         new ExpirationPlugin({
           purgeOnQuotaError: true,
+          maxEntries: 100,
         }),
       ],
     })
