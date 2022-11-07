@@ -1,31 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import {getRepoHtmlStraight} from "../../lib/datafetching"
-import ReaderPane from '../../components/Reader';
+import {getRepoHtml} from "../../lib/datafetching"
+import {ReaderPage} from '@components/index.js';
 const { repo } = Astro.params;
 Astro.response.headers.set(
   "Cache-Control",
   "max-age=30"
-) 
-let test = await fetch('/')
+)
 const parts = repo && String(repo).split('/');
 const user = parts && parts[0]; 
 const repositoryName = parts && parts[1];
-const data: any = await getRepoHtmlStraight(repo);
+const data: any = await getRepoHtml(user, repositoryName);
+const books = Object.keys(data);
+// If the user is not logged in, redirect them to the login page
+console.log(books)
+if (!data) {
+  return Astro.redirect('/404');
+}
+import "@fontsource/atkinson-hyperlegible"
 
 ---
 
 <Layout title="Repo">
-	<main>
-		<ReaderPane  client:load arr={data} user={user} repositoryName={repositoryName}/> 
+	<main class="font-sans">
+		<ReaderPage  client:load data={data} user={user} repositoryName={repositoryName}books={books} /> 
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 0 1.5rem;
-		max-width: 90%;
-	}
-</style>
 

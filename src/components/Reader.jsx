@@ -1,10 +1,25 @@
-import {createSignal, onMount, Show} from "solid-js";
+import {createSignal, onMount, Show, createMemo} from "solid-js";
+import {SvgDownload, SvgArrow, SvgSearch, SvgBook} from "./index";
 // import {checkForNewerDocOnNetwork} from "../lib/datafetching";
 
-export default function ReaderPane(props) {
-  const [arrIdx, setArrIdx] = createSignal(0);
+/* 
+{
+  k: [
+  v: {
+  data: html,
+  sortOrder
+  }
+  ]
+}
+*/
 
-  const [dataToUse, setDataToUse] = createSignal(props.arr);
+export default function ReaderPane(props) {
+  // DO NOT DESTRUCTURE OUTSIDE A TRACKED CONTEXT IN SOLID.  YOU CAN DESTRUCTURE IN CREATEEFFECT, MEMO, OR JSX, notat the top;
+  // firstBook, first Chapter
+  console.log({props});
+
+  const [chapterIdx, setChapterIdx] = createSignal(0);
+
   const [newerData, setNewerData] = createSignal({
     hasNewerData: false,
     response: null,
@@ -48,17 +63,17 @@ export default function ReaderPane(props) {
 
   function handle(dir) {
     if (dir === "prev") {
-      return setArrIdx((prev) => {
+      return props.setChapterIdx((prev) => {
         return --prev;
       });
     } else {
-      return setArrIdx((prev) => {
+      return props.setChapterIdx((prev) => {
         return ++prev;
       });
     }
   }
   function skip(num) {
-    return setArrIdx(num);
+    return props.setChapterIdx(num);
   }
 
   // todo: Would it not make more sense just to create a SW route that listens for fetch of this page using network first with query query param: If it succeeds save without
@@ -68,7 +83,7 @@ export default function ReaderPane(props) {
     let newData = newerData();
     debugger;
 
-    setDataToUse(newData.data);
+    // setDataToUse(newData.data);
     setNewerData({hasNewerData: false, data: null});
     const cache = await caches.open("astro-pages");
     let req = `/read/${props.user}/${props.repositoryName}`;
@@ -87,21 +102,23 @@ export default function ReaderPane(props) {
             Newer Data is available for this page, click to update
           </button>
         </Show>
-        <ul class="flex flex-wrap gap-2 h-1/6">
-          <For each={dataToUse()}>
-            {(item, idx) => <button onClick={() => skip(idx)}>{idx}</button>}
-          </For>
-        </ul>
-        <div class="flex justify-between content-center items-center h-5/6">
-          <button class="bg-red-300 h-full" onClick={(e) => handle("prev")}>
-            Prev
+
+        <div class="flex justify-center content-center items-center  pt-12 h-[90%]">
+          <button
+            class="mr-20 w-14  h-full hover:bg-neutral-200 transition-colors duration-250"
+            onClick={(e) => handle("prev")}
+          >
+            <SvgArrow className="text-slate-800 fill-current mx-auto " />
           </button>
           <div
-            class="w-4/5 h-full overflow-y-scroll py-4 px-8"
-            innerHTML={dataToUse()[arrIdx()]}
+            class="max-w-[85ch]  h-full overflow-y-scroll px-4 leading-relaxed"
+            innerHTML={props.html()}
           />
-          <button class="bg-blue-300 h-full" onClick={(e) => handle()}>
-            Next
+          <button
+            class=" ml-20 w-14 bg-zinc-200 h-full text-center"
+            onClick={(e) => handle()}
+          >
+            <SvgArrow className="text-slate-800 fill-current mx-auto rotate-180" />
           </button>
         </div>
       </div>

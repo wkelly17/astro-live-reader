@@ -3,7 +3,11 @@
   "compilerOptions": {
     "jsx": "preserve",
     "allowJs": true,
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"]
+    }
   },
   "include": ["./**/*", "node_modules/vite-plugin-pwa/client.d.ts"]
 }

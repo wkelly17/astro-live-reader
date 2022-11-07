@@ -40,7 +40,7 @@ export default defineConfig({
         },
 
         devOptions: {
-          enabled: false,
+          enabled: import.meta.env.DEV,
           type: "module",
         },
         registerType: "prompt",

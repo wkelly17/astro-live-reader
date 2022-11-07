@@ -1,12 +1,17 @@
 // http://localhost/u/WA-Catalog/en_ulb/index.json
+
+import FUNCTIONS_ROUTES from "../functionsRoutes";
+
 // import {readDb, writeToDb} from "./db";
-export async function getRepoHtml() {
+FUNCTIONS_ROUTES;
+export async function getRepoHtml(user, repo) {
+  if (!repo) return;
+  let fetchUrl = import.meta.env.PUBLIC_API_URL_BASE + `/${repo}`;
   const response = await fetch(
-    "http://localhost/u/WA-Catalog/en_ulb/index.json"
+    FUNCTIONS_ROUTES.getHtml + `?user=${user}` + `&repo=${repo}`
   );
-  const indexToHtml = await response.json();
-  const allHtml = await getAllHtml(indexToHtml);
-  return allHtml;
+  const data = await response.json();
+  return data;
 }
 
 export async function getRepoHtmlStraight(req, skipDb = false) {

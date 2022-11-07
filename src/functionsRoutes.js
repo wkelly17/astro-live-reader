@@ -6,5 +6,6 @@ let base =
 
 const FUNCTIONS_ROUTES = {
   time: base + "time",
+  getHtml: base + "getHtml",
 };
 export default FUNCTIONS_ROUTES;

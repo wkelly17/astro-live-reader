@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "wrangler pages dev ./dist",
+    "preview-debug": "wrangler pages dev ./dist --debug",
     "astro": "astro"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
     "@astrojs/node": "^2.0.2",
     "@astrojs/solid-js": "^1.2.2",
     "@astrojs/tailwind": "^2.1.1",
+    "@fontsource/atkinson-hyperlegible": "^4.5.10",
+    "@solid-primitives/scheduled": "^1.2.0",
     "astro": "^1.6.0",
     "solid-js": "^1.6.0",
     "sqlite": "^4.1.2",
@@ -28,6 +31,7 @@
     "workbox-core": "^6.5.4",
     "workbox-expiration": "^6.5.4",
     "workbox-precaching": "^6.5.4",
+    "workbox-recipes": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
     "workbox-window": "^6.5.4",

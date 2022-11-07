@@ -5,6 +5,8 @@ specifiers:
   '@astrojs/node': ^2.0.2
   '@astrojs/solid-js': ^1.2.2
   '@astrojs/tailwind': ^2.1.1
+  '@fontsource/atkinson-hyperlegible': ^4.5.10
+  '@solid-primitives/scheduled': ^1.2.0
   astro: ^1.6.0
   solid-js: ^1.6.0
   sqlite: ^4.1.2
@@ -16,6 +18,7 @@ specifiers:
   workbox-core: ^6.5.4
   workbox-expiration: ^6.5.4
   workbox-precaching: ^6.5.4
+  workbox-recipes: ^6.5.4
   workbox-routing: ^6.5.4
   workbox-strategies: ^6.5.4
   workbox-window: ^6.5.4
@@ -26,6 +29,8 @@ dependencies:
   '@astrojs/node': 2.0.2
   '@astrojs/solid-js': 1.2.2_62p55bdagmupcfdhohd4e56yya
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
+  '@fontsource/atkinson-hyperlegible': 4.5.10
+  '@solid-primitives/scheduled': 1.2.0_solid-js@1.6.1
   astro: 1.6.2
   solid-js: 1.6.1
   sqlite: 4.1.2
@@ -39,6 +44,7 @@ devDependencies:
   workbox-core: 6.5.4
   workbox-expiration: 6.5.4
   workbox-precaching: 6.5.4
+  workbox-recipes: 6.5.4
   workbox-routing: 6.5.4
   workbox-strategies: 6.5.4
   workbox-window: 6.5.4
@@ -1416,6 +1422,10 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@fontsource/atkinson-hyperlegible/4.5.10:
+    resolution: {integrity: sha512-UyKTkEGQnF5lbAYRIPCeAikkVgBPQ8n3ve/cdJX1tp0Kma3pe7cZOVESEK2oyTZqn7Jt3ZS51hbY7hR8u4dLXA==}
+    dev: false
+
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
@@ -1737,6 +1747,14 @@ packages:
       picomatch: 2.3.1
       rollup: 2.79.1
     dev: true
+
+  /@solid-primitives/scheduled/1.2.0_solid-js@1.6.1:
+    resolution: {integrity: sha512-59QbtGACZD8RIkD0jNQVUHRBF6uW7dKzDVFYSgogRdfxRO9kgXc6aGkLrCjd4k4g3kYe+XiBLcvYKyut4F7BHg==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      solid-js: 1.6.1
+    dev: false
 
   /@surma/rollup-plugin-off-main-thread/2.2.3:
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}

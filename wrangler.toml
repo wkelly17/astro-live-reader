@@ -1,0 +1,3 @@
+kv_namespaces = [
+  { binding = "HtmlFetched", id = "<ignored>", preview_id = "<ignored>" },
+]
