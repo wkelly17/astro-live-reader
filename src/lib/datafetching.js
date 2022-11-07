@@ -42,7 +42,7 @@ export async function getRepoHtmlStraight(req, skipDb = false) {
         '<div class="col-md-6" role="main" id="outer-content">'
       )[1];
       let chapters = justScripture.split(/<div id="ch-\d+" class="chapter">/);
-      let currentIdx = 0;
+      // let currentIdx = 0;
 
       // const chapArray = chapters.map((chapter) => {
       //   let data = parse(chapter, options);
