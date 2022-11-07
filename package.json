@@ -17,7 +17,6 @@
     "@astrojs/solid-js": "^1.2.2",
     "@astrojs/tailwind": "^2.1.1",
     "@fontsource/atkinson-hyperlegible": "^4.5.10",
-    "@solid-primitives/scheduled": "^1.2.0",
     "astro": "^1.6.0",
     "solid-js": "^1.6.0",
     "sqlite": "^4.1.2",

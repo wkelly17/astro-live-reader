@@ -1,9 +1,19 @@
 import {createSignal, onMount, Show, createMemo} from "solid-js";
 import {SvgDownload, SvgArrow, SvgSearch, SvgBook} from "./index";
-import {debounce} from "@solid-primitives/scheduled";
 
 export default function ReaderPane(props) {
   const [menuIsOpen, setMenuIsOpen] = createSignal(false);
+
+  const debounce = (callback, wait) => {
+    let timeoutId = null;
+    return (...args) => {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        callback.apply(null, args);
+      }, wait);
+    };
+  };
+
   function setNewChapIdx(arrIdx) {
     console.log({arrIdx});
     props.setChapterIdx(arrIdx);
