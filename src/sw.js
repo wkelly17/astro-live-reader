@@ -131,5 +131,5 @@ registerRoute(
 // SKIP WAITING prompt comes from the sw update process; Used for updating SW between builds
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
-  window.reload();
+  // window.reload();
 });

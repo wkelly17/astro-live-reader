@@ -9,6 +9,7 @@ export async function onRequest(context) {
     data, // arbitrary space for passing data between middlewares
   } = context;
   // console.log(context);
+  return new Response(`Hello, world! The unix epoch is ${Date.now()}`);
   const {origin} = new URL(request.url);
   const test2 = await fetch(`${origin}/api/time`);
   const test3 = await test2.text();
