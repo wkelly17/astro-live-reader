@@ -81,7 +81,7 @@ export default function ReaderPane(props) {
   // So.. request to current page onMount,
   async function updateReaderPane() {
     let newData = newerData();
-    debugger;
+    // debugger;
 
     // setDataToUse(newData.data);
     setNewerData({hasNewerData: false, data: null});

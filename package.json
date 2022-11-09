@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@solidjs/router": "^0.5.0",
     "@astrojs/cloudflare": "^3.1.2",
     "@astrojs/node": "^2.0.2",
     "@astrojs/solid-js": "^1.2.2",

@@ -6,7 +6,7 @@ specifiers:
   '@astrojs/solid-js': ^1.2.2
   '@astrojs/tailwind': ^2.1.1
   '@fontsource/atkinson-hyperlegible': ^4.5.10
-  '@solid-primitives/scheduled': ^1.2.0
+  '@solidjs/router': ^0.5.0
   astro: ^1.6.0
   solid-js: ^1.6.0
   sqlite: ^4.1.2
@@ -30,7 +30,7 @@ dependencies:
   '@astrojs/solid-js': 1.2.2_62p55bdagmupcfdhohd4e56yya
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
   '@fontsource/atkinson-hyperlegible': 4.5.10
-  '@solid-primitives/scheduled': 1.2.0_solid-js@1.6.1
+  '@solidjs/router': 0.5.0_solid-js@1.6.1
   astro: 1.6.2
   solid-js: 1.6.1
   sqlite: 4.1.2
@@ -1748,10 +1748,10 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@solid-primitives/scheduled/1.2.0_solid-js@1.6.1:
-    resolution: {integrity: sha512-59QbtGACZD8RIkD0jNQVUHRBF6uW7dKzDVFYSgogRdfxRO9kgXc6aGkLrCjd4k4g3kYe+XiBLcvYKyut4F7BHg==}
+  /@solidjs/router/0.5.0_solid-js@1.6.1:
+    resolution: {integrity: sha512-rNR07l21tWWDVmCbaapggB89rEX7jlM2XChpTLqEGEnj46LzVZ8zgvjcF6NNKScByAlLpoQUkVIjB2KHpcMi+w==}
     peerDependencies:
-      solid-js: ^1.6.0
+      solid-js: ^1.5.3
     dependencies:
       solid-js: 1.6.1
     dev: false

@@ -1,0 +1,21 @@
+---
+import Layout from '../../../../../layouts/Layout.astro';
+
+const {user, repo, book, chapter} = Astro.params;
+console.log({user, repo})
+const repoResponse = await fetch(`http://localhost:3000/getHtmlIndex.json?user=${user}&repo=${repo}`);
+const repoIndex = await repoResponse.json();
+
+console.log('HERE')
+console.log({repoIndex})
+
+import ReaderSpaPane from '../../../../../components/ReaderSpa';
+let ssrRoute = Astro.url.pathname;
+---
+
+<Layout title={'testpwa'}>
+	<main class="font-sans">
+		<ReaderSpaPane  client:load ssrRoute={ssrRoute} user={user} repo={repo} repoIndex={repoIndex} book={book} chapter={chapter}/> 
+	</main>
+</Layout>
+

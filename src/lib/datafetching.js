@@ -3,7 +3,7 @@
 import FUNCTIONS_ROUTES from "../functionsRoutes";
 
 // import {readDb, writeToDb} from "./db";
-FUNCTIONS_ROUTES;
+
 export async function getRepoHtml(user, repo) {
   if (!repo) return;
   let fetchUrl = import.meta.env.PUBLIC_API_URL_BASE + `/${repo}`;
